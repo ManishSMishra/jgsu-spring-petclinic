@@ -11,13 +11,15 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                // Get some code from a GitHub repository
-                git url: 'https://github.com/ManishSMishra/jgsu-spring-petclinic.git', branch: 'main'
-            }
 
-        }
+        // Implicit checkout step
+        // stage('Checkout') {
+        //     steps {
+        //         // Get some code from a GitHub repository
+        //         git url: 'https://github.com/ManishSMishra/jgsu-spring-petclinic.git', branch: 'main'
+        //     }
+
+        // }
         
         stage('Build') {
             steps {
