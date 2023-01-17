@@ -6,6 +6,10 @@ pipeline {
         maven "M3"
     }*/
 
+        triggers {
+        pollSCM('* * * * *')
+    }
+
     stages {
         stage('Checkout') {
             steps {

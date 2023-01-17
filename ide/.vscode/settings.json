@@ -1,0 +1,23 @@
+// {
+//     "java.configuration.updateBuildConfiguration": "interactive"
+// }
+
+{
+    "jenkins-runner.jobs": {
+        "runner" : {
+        "runWith": "pipelines—9088",
+        "name": "runner",
+        "isDefault": true
+
+        }
+},
+    "jenkins-runner.hostConfigs": {
+    "pipelines—9088": {
+    "url": "http://localhost:9088",
+    "user": "admin",
+    "password": "admin",
+    "useCrumbIssuer": true
+    }
+}
+
+}
