@@ -35,7 +35,6 @@ pipeline {
         post {
             always {
 
-                stage('Archive') {
 
                 junit '**/target/surefire-reports/*.xml'
                 archiveArtifacts 'target/*.jar'
@@ -50,7 +49,7 @@ pipeline {
                 subject: "Job \'${JOB_NAME}\' (build ${BUILD_NUMBER}) ${currentBuild.result}", 
                 to: "manish@test.com"
 
-                }
+                
             }
                 }
 
