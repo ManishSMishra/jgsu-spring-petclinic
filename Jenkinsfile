@@ -1,5 +1,3 @@
-/////////////////////////////// OLD //////////////////
-
 pipeline {
     agent any
 
@@ -28,9 +26,14 @@ pipeline {
                 sh "./mvnw clean package"
 
             }
-            
-            post {
+
+        }
+        }
+
+        post {
             always {
+
+                stage('Archive') {
 
                 junit '**/target/surefire-reports/*.xml'
                 archiveArtifacts 'target/*.jar'
@@ -44,14 +47,9 @@ pipeline {
                 recipientProviders: [upstreamDevelopers(), requestor()], 
                 subject: "Job \'${JOB_NAME}\' (build ${BUILD_NUMBER}) ${currentBuild.result}", 
                 to: "manish@test.com"
+
+                }
             }
                 }
-
-        }
-        
-        
-    }
-    
-    
 
 }
